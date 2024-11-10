@@ -1,19 +1,20 @@
-def calcular_calificacion_final():
-    # Solicitar la calificación original del estudiante
-    calificacion = float(input("Enter the student's grade: "))
+def calcular_creditos():
+    # Solicitar el número de materias cursadas
+    num_materias = int(input("Enter the number of subjects taken: "))
     
-    # Preguntar si hizo tareas adicionales
-    tareas_adicionales = input("Did the student do additional tasks? (yes/no): ").lower()
+    # Inicializar el total de créditos
+    total_creditos = 0
+    
+    # Solicitar el puntaje para cada materia y evaluar si está aprobado
+    for i in range(num_materias):
+        puntaje = float(input(f"Enter the score for subject {i+1}: "))
+        
+        # Verificar si el puntaje es aprobado
+        if puntaje >= 60:
+            total_creditos += 3  # Cada materia aprobada otorga 3 créditos
+    
+    # Mostrar el total de créditos
+    print(f"The total number of credits earned is: {total_creditos}")
 
-    # Si hizo tareas adicionales, añadir un 5% extra
-    if tareas_adicionales == "yes":
-        calificacion += calificacion * 0.05
-        # Asegurarse de que la calificación no exceda 100
-        if calificacion > 100:
-            calificacion = 100
-
-    # Mostrar la calificación final
-    print(f"The final grade is: {calificacion:.2f}")
-
-# Llamar a la función para calcular la calificación final
-calcular_calificacion_final()
+# Llamar a la función para calcular los créditos
+calcular_creditos()
