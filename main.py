@@ -1,15 +1,19 @@
-def es_bisiesto():
-    # Solicitar el año al usuario
-    año = int(input("Enter a year: "))
+def clasificar_edad():
+    # Solicitar la edad al usuario
+    edad = int(input("Enter your age: "))
 
-    # Determinar si el año es bisiesto
-    if (año % 4 == 0 and año % 100 != 0) or (año % 400 == 0):
-        resultado = "Leap year"
+    # Clasificar según la edad
+    if 0 <= edad <= 12:
+        categoria = "Child"
+    elif 13 <= edad <= 17:
+        categoria = "Adolescent"
+    elif 18 <= edad <= 64:
+        categoria = "Adult"
     else:
-        resultado = "Not a leap year"
+        categoria = "Senior"
 
-    # Mostrar el resultado
-    print(f"The year is {resultado}.")
+    # Mostrar la categoría
+    print(f"You are classified as: {categoria}.")
 
-# Llamar a la función para determinar si el año es bisiesto
-es_bisiesto()
+# Llamar a la función para clasificar la edad
+clasificar_edad()
