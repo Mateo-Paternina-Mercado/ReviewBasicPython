@@ -1,22 +1,27 @@
-def imprimir_dia_semana(numero):
-    match numero:
-        case 1:
-            print("Monday")
-        case 2:
-            print("Tuesday")
-        case 3:
-            print("Wednesday")
-        case 4:
-            print("Thursday")
-        case 5:
-            print("Friday")
-        case 6:
-            print("Saturday")
-        case 7:
-            print("Sunday")
-        case _:
-            print("Invalid number. Please enter a number from 1 to 7.")
+def calculadora():
+    # Solicitar los números y la operación
+    num1 = float(input("Enter the first number: "))
+    num2 = float(input("Enter the second number: "))
+    operacion = input("Enter the operation (+, -, *, /): ")
 
-# Solicitar al usuario que ingrese un número del 1 al 7
-numero = int(input("Enter a number from 1 to 7: "))
-imprimir_dia_semana(numero)
+    # Usar match para elegir la operación
+    match operacion:
+        case "+":
+            resultado = num1 + num2
+        case "-":
+            resultado = num1 - num2
+        case "*":
+            resultado = num1 * num2
+        case "/":
+            if num2 != 0:
+                resultado = num1 / num2
+            else:
+                resultado = "Error: Cannot divide by zero."
+        case _:
+            resultado = "Invalid operation."
+
+    # Mostrar el resultado
+    print(f"Result: {resultado}")
+
+# Llamar a la función de la calculadora
+calculadora()
