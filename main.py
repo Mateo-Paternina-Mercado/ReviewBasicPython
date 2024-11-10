@@ -1,22 +1,21 @@
-def convertir_calificacion():
-    # Solicitar la calificación numérica
-    calificacion = float(input("Enter the numeric grade (0-100): "))
+def calcular_costo_estacionamiento():
+    # Solicitar el número de horas de estacionamiento
+    horas = int(input("Enter the number of hours of parking: "))
 
-    # Usar match para convertir la calificación a letra
-    match calificacion:
-        case calificacion if 90 <= calificacion <= 100:
-            letra = "A"
-        case calificacion if 80 <= calificacion <= 89:
-            letra = "B"
-        case calificacion if 70 <= calificacion <= 79:
-            letra = "C"
-        case calificacion if 60 <= calificacion <= 69:
-            letra = "D"
-        case _:
-            letra = "F"
+    # Inicializar el costo
+    costo = 0
 
-    # Mostrar la calificación en letra
-    print(f"The letter grade is: {letra}.")
+    # Calcular el costo basado en las tarifas progresivas
+    if horas <= 1:
+        costo = 5
+    elif 2 <= horas <= 4:
+        costo = 5 + (horas - 1) * 4
+    else:
+        costo = 5 + 3 * 3 + (horas - 4) * 3
 
-# Llamar a la función para convertir la calificación
-convertir_calificacion()
+    # Mostrar el costo total
+    print(f"The total parking cost is: ${costo}")
+
+# Llamar a la función para calcular el costo de estacionamiento
+calcular_costo_estacionamiento()
+
