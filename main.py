@@ -1,20 +1,23 @@
-def convertir_temperatura():
-    # Solicitar la temperatura y la escala
-    temperatura = float(input("Enter the temperature: "))
-    escala = input("Enter the scale (C for Celsius, F for Fahrenheit): ").upper()
+def calcular_imc():
+    # Solicitar el peso y la altura
+    peso = float(input("Enter your weight in kg: "))
+    altura = float(input("Enter your height in meters: "))
 
-    # Usar match para convertir la temperatura
-    match escala:
-        case "C":
-            # Convertir de Fahrenheit a Celsius
-            temp_convertida = (temperatura - 32) * 5/9
-            print(f"{temperatura} Fahrenheit is equal to {temp_convertida:.2f} Celsius.")
-        case "F":
-            # Convertir de Celsius a Fahrenheit
-            temp_convertida = (temperatura * 9/5) + 32
-            print(f"{temperatura} Celsius is equal to {temp_convertida:.2f} Fahrenheit.")
-        case _:
-            print("Invalid scale. Please enter 'C' or 'F'.")
+    # Calcular el IMC
+    imc = peso / (altura ** 2)
 
-# Llamar a la función para convertir la temperatura
-convertir_temperatura()
+    # Clasificar el IMC
+    if imc < 18.5:
+        estado = "Underweight"
+    elif 18.5 <= imc <= 24.9:
+        estado = "Normal weight"
+    elif 25 <= imc <= 29.9:
+        estado = "Overweight"
+    else:
+        estado = "Obesity"
+
+    # Mostrar el IMC y el estado
+    print(f"Your BMI is {imc:.2f}. You are classified as: {estado}.")
+
+# Llamar a la función para calcular el IMC
+calcular_imc()
