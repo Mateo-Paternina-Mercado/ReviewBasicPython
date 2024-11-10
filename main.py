@@ -1,23 +1,19 @@
-def calcular_imc():
-    # Solicitar el peso y la altura
-    peso = float(input("Enter your weight in kg: "))
-    altura = float(input("Enter your height in meters: "))
+def mayor_de_tres():
+    # Solicitar tres números al usuario
+    num1 = float(input("Enter the first number: "))
+    num2 = float(input("Enter the second number: "))
+    num3 = float(input("Enter the third number: "))
 
-    # Calcular el IMC
-    imc = peso / (altura ** 2)
-
-    # Clasificar el IMC
-    if imc < 18.5:
-        estado = "Underweight"
-    elif 18.5 <= imc <= 24.9:
-        estado = "Normal weight"
-    elif 25 <= imc <= 29.9:
-        estado = "Overweight"
+    # Determinar el mayor de los tres números
+    if num1 >= num2 and num1 >= num3:
+        mayor = num1
+    elif num2 >= num1 and num2 >= num3:
+        mayor = num2
     else:
-        estado = "Obesity"
+        mayor = num3
 
-    # Mostrar el IMC y el estado
-    print(f"Your BMI is {imc:.2f}. You are classified as: {estado}.")
+    # Mostrar el número mayor
+    print(f"The largest number is: {mayor}.")
 
-# Llamar a la función para calcular el IMC
-calcular_imc()
+# Llamar a la función para determinar el mayor de los tres números
+mayor_de_tres()
