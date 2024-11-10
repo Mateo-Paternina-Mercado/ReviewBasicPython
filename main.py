@@ -1,20 +1,22 @@
-def calcular_creditos():
-    # Solicitar el número de materias cursadas
-    num_materias = int(input("Enter the number of subjects taken: "))
-    
-    # Inicializar el total de créditos
-    total_creditos = 0
-    
-    # Solicitar el puntaje para cada materia y evaluar si está aprobado
-    for i in range(num_materias):
-        puntaje = float(input(f"Enter the score for subject {i+1}: "))
-        
-        # Verificar si el puntaje es aprobado
-        if puntaje >= 60:
-            total_creditos += 3  # Cada materia aprobada otorga 3 créditos
-    
-    # Mostrar el total de créditos
-    print(f"The total number of credits earned is: {total_creditos}")
+def convertir_calificacion():
+    # Solicitar la calificación numérica
+    calificacion = float(input("Enter the numeric grade (0-100): "))
 
-# Llamar a la función para calcular los créditos
-calcular_creditos()
+    # Usar match para convertir la calificación a letra
+    match calificacion:
+        case calificacion if 90 <= calificacion <= 100:
+            letra = "A"
+        case calificacion if 80 <= calificacion <= 89:
+            letra = "B"
+        case calificacion if 70 <= calificacion <= 79:
+            letra = "C"
+        case calificacion if 60 <= calificacion <= 69:
+            letra = "D"
+        case _:
+            letra = "F"
+
+    # Mostrar la calificación en letra
+    print(f"The letter grade is: {letra}.")
+
+# Llamar a la función para convertir la calificación
+convertir_calificacion()
