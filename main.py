@@ -1,21 +1,19 @@
-def calcular_tiempo_viaje():
-    # Solicitar la distancia y la velocidad promedio
-    distancia = float(input("Enter the distance to travel (in km): "))
-    velocidad = float(input("Enter the average speed of the car (in km/h): "))
+def calcular_calificacion_final():
+    # Solicitar la calificación original del estudiante
+    calificacion = float(input("Enter the student's grade: "))
+    
+    # Preguntar si hizo tareas adicionales
+    tareas_adicionales = input("Did the student do additional tasks? (yes/no): ").lower()
 
-    # Verificar si la velocidad es mayor a 120 km/h
-    if velocidad > 120:
-        print("Warning: Speed is over 120 km/h. Please drive safely!")
+    # Si hizo tareas adicionales, añadir un 5% extra
+    if tareas_adicionales == "yes":
+        calificacion += calificacion * 0.05
+        # Asegurarse de que la calificación no exceda 100
+        if calificacion > 100:
+            calificacion = 100
 
-    # Calcular el tiempo en horas
-    tiempo_horas = distancia / velocidad
+    # Mostrar la calificación final
+    print(f"The final grade is: {calificacion:.2f}")
 
-    # Convertir el tiempo a horas y minutos
-    horas = int(tiempo_horas)
-    minutos = int((tiempo_horas - horas) * 60)
-
-    # Mostrar el tiempo de viaje
-    print(f"The travel time is: {horas} hours and {minutos} minutes.")
-
-# Llamar a la función para calcular el tiempo de viaje
-calcular_tiempo_viaje()
+# Llamar a la función para calcular la calificación final
+calcular_calificacion_final()
