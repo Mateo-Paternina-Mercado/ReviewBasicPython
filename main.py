@@ -1,27 +1,19 @@
-def calculadora():
-    # Solicitar los números y la operación
-    num1 = float(input("Enter the first number: "))
-    num2 = float(input("Enter the second number: "))
-    operacion = input("Enter the operation (+, -, *, /): ")
+def tipo_triangulo():
+    # Solicitar las longitudes de los tres lados
+    lado1 = float(input("Enter the length of the first side: "))
+    lado2 = float(input("Enter the length of the second side: "))
+    lado3 = float(input("Enter the length of the third side: "))
 
-    # Usar match para elegir la operación
-    match operacion:
-        case "+":
-            resultado = num1 + num2
-        case "-":
-            resultado = num1 - num2
-        case "*":
-            resultado = num1 * num2
-        case "/":
-            if num2 != 0:
-                resultado = num1 / num2
-            else:
-                resultado = "Error: Cannot divide by zero."
-        case _:
-            resultado = "Invalid operation."
+    # Determinar el tipo de triángulo
+    if lado1 == lado2 == lado3:
+        tipo = "Equilateral"
+    elif lado1 == lado2 or lado2 == lado3 or lado1 == lado3:
+        tipo = "Isosceles"
+    else:
+        tipo = "Scalene"
 
-    # Mostrar el resultado
-    print(f"Result: {resultado}")
+    # Mostrar el tipo de triángulo
+    print(f"The triangle is {tipo}.")
 
-# Llamar a la función de la calculadora
-calculadora()
+# Llamar a la función para determinar el tipo de triángulo
+tipo_triangulo()
