@@ -1,21 +1,20 @@
-def calcular_costo_estacionamiento():
-    # Solicitar el número de horas de estacionamiento
-    horas = int(input("Enter the number of hours of parking: "))
+def clasificar_triangulo():
+    # Solicitar los tres ángulos del triángulo
+    angulo1 = float(input("Enter the first angle of the triangle (in degrees): "))
+    angulo2 = float(input("Enter the second angle of the triangle (in degrees): "))
+    angulo3 = float(input("Enter the third angle of the triangle (in degrees): "))
 
-    # Inicializar el costo
-    costo = 0
-
-    # Calcular el costo basado en las tarifas progresivas
-    if horas <= 1:
-        costo = 5
-    elif 2 <= horas <= 4:
-        costo = 5 + (horas - 1) * 4
+    # Verificar si la suma de los ángulos es igual a 180° (condición necesaria para un triángulo)
+    if angulo1 + angulo2 + angulo3 != 180:
+        print("The angles do not form a valid triangle.")
     else:
-        costo = 5 + 3 * 3 + (horas - 4) * 3
+        # Clasificar el triángulo según sus ángulos
+        if angulo1 < 90 and angulo2 < 90 and angulo3 < 90:
+            print("The triangle is acute.")
+        elif angulo1 == 90 or angulo2 == 90 or angulo3 == 90:
+            print("The triangle is right-angled.")
+        else:
+            print("The triangle is obtuse.")
 
-    # Mostrar el costo total
-    print(f"The total parking cost is: ${costo}")
-
-# Llamar a la función para calcular el costo de estacionamiento
-calcular_costo_estacionamiento()
-
+# Llamar a la función para clasificar el triángulo
+clasificar_triangulo()
