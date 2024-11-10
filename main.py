@@ -1,24 +1,21 @@
-def calcular_salario_neto():
-    # Solicitar el salario bruto y el país de residencia
-    salario_bruto = float(input("Enter your gross salary: "))
-    pais = input("Enter your country of residence (Country A, Country B, Country C): ").title()
+def calcular_tiempo_viaje():
+    # Solicitar la distancia y la velocidad promedio
+    distancia = float(input("Enter the distance to travel (in km): "))
+    velocidad = float(input("Enter the average speed of the car (in km/h): "))
 
-    # Calcular el porcentaje de impuestos según el país
-    match pais:
-        case "Country A":
-            impuestos = 0.20
-        case "Country B":
-            impuestos = 0.15
-        case "Country C":
-            impuestos = 0.10
-        case _:
-            impuestos = 0.25
+    # Verificar si la velocidad es mayor a 120 km/h
+    if velocidad > 120:
+        print("Warning: Speed is over 120 km/h. Please drive safely!")
 
-    # Calcular el salario neto
-    salario_neto = salario_bruto * (1 - impuestos)
+    # Calcular el tiempo en horas
+    tiempo_horas = distancia / velocidad
 
-    # Mostrar el salario neto
-    print(f"Your net salary is: {salario_neto:.2f}.")
+    # Convertir el tiempo a horas y minutos
+    horas = int(tiempo_horas)
+    minutos = int((tiempo_horas - horas) * 60)
 
-# Llamar a la función para calcular el salario neto
-calcular_salario_neto()
+    # Mostrar el tiempo de viaje
+    print(f"The travel time is: {horas} hours and {minutos} minutes.")
+
+# Llamar a la función para calcular el tiempo de viaje
+calcular_tiempo_viaje()
