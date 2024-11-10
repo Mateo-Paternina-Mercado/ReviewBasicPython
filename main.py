@@ -1,19 +1,23 @@
-def clasificar_edad():
-    # Solicitar la edad al usuario
-    edad = int(input("Enter your age: "))
+def clasificar_nota():
+    # Solicitar la nota numérica
+    nota = float(input("Enter the grade (0-100): "))
 
-    # Clasificar según la edad
-    if 0 <= edad <= 12:
-        categoria = "Child"
-    elif 13 <= edad <= 17:
-        categoria = "Adolescent"
-    elif 18 <= edad <= 64:
-        categoria = "Adult"
+    # Clasificar la nota
+    if 90 <= nota <= 100:
+        calificacion = "A"
+    elif 80 <= nota <= 89:
+        calificacion = "B"
+    elif 70 <= nota <= 79:
+        calificacion = "C"
+    elif 60 <= nota <= 69:
+        calificacion = "D"
+    elif 0 <= nota < 60:
+        calificacion = "F"
     else:
-        categoria = "Senior"
+        calificacion = "Invalid grade"
 
-    # Mostrar la categoría
-    print(f"You are classified as: {categoria}.")
+    # Mostrar la calificación
+    print(f"The grade is: {calificacion}.")
 
-# Llamar a la función para clasificar la edad
-clasificar_edad()
+# Llamar a la función para clasificar la nota
+clasificar_nota()
